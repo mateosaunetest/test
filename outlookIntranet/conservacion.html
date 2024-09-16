@@ -1,0 +1,32 @@
+<p class="editor-paragraph">
+  <b><strong class="editor-text-bold"> Estimados(as), </strong></b>
+</p>
+<p class="editor-paragraph">
+  Un registro fue modificado:
+  <b
+    ><strong class="editor-text-bold">
+      @{triggerBody()?['Modified']} by
+      @{coalesce(triggerBody()?['Author']?['DisplayName'],'someone')}.</strong
+    ></b
+  >
+  <br />@{triggerOutputs()?['body/Editor/Email']}
+</p>
+<p class="editor-paragraph">
+  Detalles:
+  <br /><br />
+  <b
+    ><strong class="editor-text-bold">
+      @{triggerOutputs()?['body/Curso/Value']} ( @{triggerBody()?['Seccion']}
+      )<br />
+      @{triggerOutputs()?['body/Docente/Value']}<br />
+      Horario:
+      @{triggerOutputs()?['body/HoraInicio/Value']}-@{triggerOutputs()?['body/HoraFin/Value']}
+      ( @{triggerOutputs()?['body/Dia/Value']} )<br />
+      Cupos: ( @{triggerOutputs()?['body/Matriculados']} /
+      @{triggerOutputs()?['body/Tope']} ) @{triggerOutputs()?['body/Aula']}
+      <br /><br />
+      Created by @{triggerOutputs()?['body/Author/DisplayName']}- Modified by
+      @{triggerOutputs()?['body/Editor/DisplayName']}
+    </strong></b
+  >
+</p>
